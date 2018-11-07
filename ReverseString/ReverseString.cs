@@ -13,34 +13,22 @@ namespace ReverseString
         {
             string inputString = null;
             string result = null;
-            bool run = true;
 
-            WriteLine("Input string to be reversed. Type exit to end program.");
-            while (run)
-            {
-                inputString = ReadLine();
+            WriteLine("Input string to be reversed.");
 
-                if (inputString == "exit" || inputString == "Exit")
-                {
-                    run = false;
-                    break;
-                }
-                else
-                {
+            char[] inputArray = inputString.ToCharArray();
 
-                    char[] inputArray = inputString.ToCharArray();
+            result = rString(inputArray, 0, inputArray.Length - 1);
+            WriteLine(result);
 
-                    result = rString(inputArray, 0, inputArray.Length - 1);
-                    WriteLine(result);
+            WriteLine();
+            ReadKey();
 
-                    WriteLine();
-                    ReadKey();
-                }
-            }
+
         }
 
 
-        public static string rString(char [] array, int start, int end)
+        public static string rString(char[] array, int start, int end)
         {
             char temp;
             string result = null;
