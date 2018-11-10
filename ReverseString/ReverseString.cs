@@ -15,6 +15,7 @@ namespace ReverseString
             string result = null;
 
             WriteLine("Input string to be reversed.");
+            inputString = ReadLine();
 
             char[] inputArray = inputString.ToCharArray();
 
