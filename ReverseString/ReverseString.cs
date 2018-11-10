@@ -14,18 +14,18 @@ namespace ReverseString
             string inputString = null;
             string result = null;
 
-            WriteLine("Input string to be reversed.");
-            inputString = ReadLine();
+            WriteLine("Input string to be reversed. Type \"exit\" to exit program." + "\n");
+            
 
-            char[] inputArray = inputString.ToCharArray();
-
-            result = rString(inputArray, 0, inputArray.Length - 1);
-            WriteLine(result);
-
-            WriteLine();
-            ReadKey();
-
-
+            while (inputString != "exit")
+            {
+                Write("{0,8}", "Input : ");
+                inputString = ReadLine();
+                char[] inputArray = inputString.ToCharArray();
+                result = rString(inputArray, 0, inputArray.Length - 1);
+                WriteLine("Result: " + result);
+                WriteLine();
+            }
         }
 
 
@@ -43,10 +43,11 @@ namespace ReverseString
                 end--;
             }
 
-            for (int i = 0; i < array.Length; i++)
+            foreach (char letter in array)
             {
-                result += array[i];
+                result += letter;
             }
+
             return result;
         }
     }
